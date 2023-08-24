@@ -1,0 +1,66 @@
+
+
+form{
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,p{
+    color: rgb(3, 3, 3);
+    margin-top: 0.4rem;
+}
+
+label{
+    color: rgb(27, 27, 27)
+}
+
+table{
+    text-decoration-color: rgb(0, 0, 0);
+}
+
+
+small{
+    color: rgb(12, 12, 12);
+}
+
+a {
+    color: rgb(61, 58, 58);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: rgb(17, 16, 16);
+    color: rgb(253, 252, 252);
+    border-radius: 2rem;
+}
+.card-img-top-home{
+    height: auto;
+    width: 100%;
+}
+.gallery{
+    
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display:block;
+}
+.card-img-top-home-veg{
+    height: auto;
+    width: 100%;
+}
+.contact{
+    height:auto;
+    width:100%;
+    max-width: 90%;
+}
+/* Responsive media queries */
+@media screen and (max-width: 768px) {
+   
+}
