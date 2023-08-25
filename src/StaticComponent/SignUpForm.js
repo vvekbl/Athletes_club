@@ -37,7 +37,7 @@ function SignUpForm() {
                     } else {
                         console.log(result);
                         alert("Registration Successful");
-                        history.push("/dashboard"); // Navigate to the dashboard page after registration
+                        history.push("/login"); // Navigate to the dashboard page after registration
                     }
                 } else {
                     console.log('Request failed. Returned status of ' + response.status);
@@ -70,7 +70,7 @@ function SignUpForm() {
 
     <center>
 
-        <h1>Registeration Form</h1>
+        <h1>Registration Form</h1>
         <br></br>
 
         <form onSubmit={handleSubmit}>
@@ -101,7 +101,8 @@ function SignUpForm() {
             </div>
             <br></br>
             <center>
-              <Link id='signup-link' onClick={handleSubmit}>Register</Link>
+              <Link id='signup-link' onClick={handleSubmit} >Register</Link>
+             
             </center>
 
         </form>

@@ -21,8 +21,9 @@ function Home() {
   
   return (
     <div>
-        <br></br>
-        <div style={{ backgroundColor: "#6577B3" }}>
+        
+      <div style={{ backgroundColor: "#6577B3" }}>
+
       <div style={{ backgroundColor: "white" }}>
       <div style={{ color: "white" }}>
         <center>
@@ -30,11 +31,10 @@ function Home() {
         </center>
         <br></br>
       </div>
-      
+
       </div>
       <div>
-        
-        <img src={Land} className="card-img-top-home" alt="Image2" />{" "}
+         <img src={Land} className="card-img-top-home" alt="Image2" />{" "}
       </div>
 
       <div>

@@ -1,7 +1,7 @@
 /* Styling for the navigation bar */
 nav {
-    /* background-color: '#1D3F6E' ; */
-    height: 30px;
+    background-color: #1D3F6E ; 
+    height: 100px;
   }
   
   /* Styling for the unordered list inside the navigation bar */

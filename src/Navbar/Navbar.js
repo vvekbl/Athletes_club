@@ -9,8 +9,9 @@ function Navbar() {
             
             <div className="nav1">
    
-                <div style={{backgroundcolor:'#1D3F6E'}}>
-                <br></br>
+                {/* <div style={{backgroundcolor:'#1D3F6E'}}> */}
+                
+                {/* <br></br> */}
               
                 <nav>
                     <ul>
@@ -40,9 +41,9 @@ function Navbar() {
                         </li>
                     </ul>
                 </nav>
-                <br></br>
+                {/* <br></br> */}
             </div>
-            </div>
+            
     ) 
 }
 

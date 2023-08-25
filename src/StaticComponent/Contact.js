@@ -7,8 +7,8 @@ import { Image } from "react-bootstrap";
 function Contact() {
   return (
     <div>
-      <br></br>
-      <div style={{backgroundColor:"white"}}>
+      {/* <br></br> */}
+      {/* <div style={{backgroundColor:"white"}}> */}
       <div class="about-section" style={{ color: "White" }}>
         <h1>Contact Us</h1>
       </div>
@@ -61,7 +61,7 @@ function Contact() {
         </div>
       </div>
     </div>
-    </div>
+    // </div>
   );
 }
 

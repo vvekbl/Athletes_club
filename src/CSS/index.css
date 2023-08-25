@@ -1,4 +1,6 @@
-
+body{
+    background-color: red;
+}
 
 form{
     width: 100%;
@@ -35,7 +37,7 @@ a {
 }
 
 a:hover {
-    background-color: rgb(17, 16, 16);
+    background-color: rgb(219, 218, 218);
     color: rgb(253, 252, 252);
     border-radius: 2rem;
 }

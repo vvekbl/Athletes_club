@@ -7,9 +7,9 @@ import "./CSS/index.css"
 
 ReactDOM.render(
   <BrowserRouter>
-  <div style={{backgroundColor: '#1D3F6E'}}>
+  {/* <div style={{backgroundColor: '#1D3F6E'}}> */}
     <App />
-  </div> 
+  {/* </div>  */}
   </BrowserRouter>,
   document.getElementById('root')
 );

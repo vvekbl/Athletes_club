@@ -54,6 +54,7 @@ function Login() {
                 localStorage.setItem('user_address',result.address)
                 localStorage.setItem('user_role',result.role)
                 history.push('/user')
+               
               }
 
             } else {
@@ -82,10 +83,7 @@ function Login() {
     
     return  (
       <div > 
-        <br></br> 
-        <div style={{backgroundColor:"white"}}>
-
-            
+       
             <center>
                 <h1>Login</h1>
                 <br></br>
@@ -112,7 +110,7 @@ function Login() {
             </center>
 
         </div>
-        </div>
+        
     )
 }
 

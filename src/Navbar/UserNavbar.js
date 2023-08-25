@@ -7,7 +7,7 @@ function UserNavbar() {
     return (
             
             <div className="trainNav">
-                <br></br>
+                {/* <br></br> */}
                 <nav>
                     <ul>
                         <li>

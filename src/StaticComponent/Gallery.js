@@ -22,7 +22,7 @@ const Gallery = () => {
     <>
     
       <div>
-        <br></br>
+        {/* <br></br> */}
         <div style={{ backgroundColor: "#D2D9E2" }}>
           <div>
         <Image src={banner} style={{ height: 500, width: 1248 }} className="gallery" />

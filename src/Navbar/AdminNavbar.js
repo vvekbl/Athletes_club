@@ -1,14 +1,16 @@
 
 import { Link} from 'react-router-dom';
-
+import '../CSS/Navbar.css'
 function AdminNavbar() {
 
 
     return (
             
             <div className="adminNav">
-                <br></br>
+                
+                
                 <nav>
+                    
                     <ul>
                         <li>
                             <Link to="/profile">Profile</Link>
@@ -46,6 +48,8 @@ function AdminNavbar() {
                     </ul>
                 </nav>
             </div>
+            
+            
     ) 
 }
 

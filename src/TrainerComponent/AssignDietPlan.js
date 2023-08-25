@@ -66,6 +66,9 @@ function AssignDietPlan() {
 
     return (
         <div>
+         
+          <div style={{backgroundColor:"white"}}>
+          <br></br>
             <center>
                 <h1>Assign DietPlan</h1>
                 <br></br>
@@ -90,6 +93,7 @@ function AssignDietPlan() {
                 </form>
             </center>
 
+        </div>
         </div>
     )
 

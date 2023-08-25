@@ -10,7 +10,7 @@ const Blogs= () => {
     return (
         <>
         <div>
-        <br></br>
+        {/* <br></br> */}
        <Image src= {myblog}  className="card-img-top-home"   /> 
        <br></br>
        <br></br>
