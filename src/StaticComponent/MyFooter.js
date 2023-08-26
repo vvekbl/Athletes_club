@@ -60,7 +60,7 @@ const Myfooter = () => {
               <h3 style={{ color: "White" }}>Follows Us</h3>
               <div className="footer-social--icons">
                 <div>
-                  <a href="https://www.facebook.com/SilverFitnessClub/"
+                  <a href="https://www.facebook.com/gtfitnessclubpune/"
                   target="_blank">
                     <FaFacebookF className="icons" />
                   </a>
@@ -68,7 +68,7 @@ const Myfooter = () => {
                 <div> 
 
                 <a
-                    href="https://www.instagram.com/silverfitnessclub_chikhali/"
+                    href="https://www.instagram.com/gt_fitness_club/?hl=en"
                     target="_blank"
                   >
                     <FaInstagram className="icons" />

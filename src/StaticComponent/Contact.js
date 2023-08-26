@@ -41,8 +41,7 @@ function Contact() {
             <br></br>
 
             <h4 style={{ textAlign: "left" }}>
-              Address: Hinjawadi - Kasarsai Rd, Phase 2, Hinjewadi Rajiv Gandhi
-              Infotech Park, Hinjawadi, Pimpri-Chinchwad, Maharashtra 411057
+              Address: GRGV+MCC, 1st Floor, Gurukrupa Complex, Modern College Road, Off FC Road, Shivajinagar, Pune, Maharashtra 411005
             </h4>
 
             <h4 style={{ textAlign: "left" }}>
