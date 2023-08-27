@@ -48,7 +48,7 @@ function Contact() {
               Contact: 020-888 888 , 020-888 789{" "}
             </h4>
             <h4 style={{ textAlign: "left" }}>
-              Email: Wecare@silverfitnessclub.in
+              {/* Email: Wecare@silverfitnessclub.in */}
             </h4>
             <br></br>
             <br></br>

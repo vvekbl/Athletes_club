@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../CSS/index.css'
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
-import { Navigate } from 'react-router';
+// import { Navigate } from 'react-router';
+
 
 function AddTrainer() {
   const [formData, setFormData] = useState({
@@ -14,7 +15,7 @@ function AddTrainer() {
     password: ''
   });
 
-  
+  const history= useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
@@ -25,8 +26,9 @@ function AddTrainer() {
       xhr.onload = function() {
         if (xhr.status === 200) {
           console.log(xhr.response);
-          Navigate("/")
-          alert("Trainer Added")
+         
+          alert("Trainer Added");
+          history.push("/addTrain/");
         } else {
           console.log('Request failed. Returned status of ' + xhr.status);
         }

@@ -99,6 +99,7 @@ function SignUpForm() {
                 <label>Password:</label>
                 <input className="form-control" type="password" name="password" value={formData.password} onChange={handleChange} required />
             </div>
+
             <br></br>
             <center>
               <Link id='signup-link' onClick={handleSubmit} >Register</Link>
