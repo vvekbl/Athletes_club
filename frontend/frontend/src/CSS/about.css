@@ -1,0 +1,85 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set global font and box-sizing */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Create a flex container for columns */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px; /* Negative margin to offset padding in columns */
+}
+
+/* Column styling */
+.column {
+  flex: 1; /* Distribute available space evenly */
+  padding: 0 8px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Card styling */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  width:300px;
+  overflow: hidden; /* Hide any content that goes beyond the card */
+}
+
+/* Card image styling */
+.card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 6px;
+}
+
+/* About section styling */
+.about-section {
+  padding: 60px;
+  text-align: center;
+}
+
+/* Container styling */
+.container {
+  width: 50px;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 20px;
+}
+
+/* Title styling */
+.title {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Button styling */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+  .column {
+    flex: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px;
+  }
+}

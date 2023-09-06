@@ -1,0 +1,150 @@
+package com.cdac.controllers;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cdac.pojos.Activity;
+import com.cdac.pojos.DietPlan;
+import com.cdac.pojos.GymMember;
+import com.cdac.pojos.MembershipPlan;
+import com.cdac.pojos.User;
+import com.cdac.pojos.WorkoutPlan;
+import com.cdac.service.ActivityService;
+import com.cdac.service.DietPlanService;
+import com.cdac.service.GymMemberService;
+import com.cdac.service.MembershipPlanService;
+import com.cdac.service.UserService;
+import com.cdac.service.WorkoutPlanService;
+
+
+
+@CrossOrigin
+@RestController
+public class GymMemberController {
+
+	@Autowired
+	private WorkoutPlanService workoutPlanService;
+	
+	@Autowired
+	private DietPlanService dietPlanService;
+	
+	@Autowired
+	private GymMemberService gymMemberService;
+	
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private MembershipPlanService membershipPlanService;
+	
+	@Autowired
+	private ActivityService activityService;
+	
+	   //get Gym Member  by memberId
+		@GetMapping("/gymmembers/{memberId}")
+		public ResponseEntity<?>findById(@PathVariable("memberId") int id) {
+			Map<String,Object>map= new HashMap<>();
+			GymMember gymmember = gymMemberService.findById(id);
+			 map.put("status", "success");
+			 map.put("data", gymmember);
+			return ResponseEntity.ok(map);
+		}
+		
+	
+		
+		//get all GymMembers
+		@GetMapping("/gymmembers")
+		public ResponseEntity<List<GymMember>> findAll() {
+			List<GymMember> list = gymMemberService.findAll();
+			List<GymMember> list1 = new ArrayList<GymMember>();
+			for (GymMember gymMember : list) {
+				if (gymMember.isPayment_status()) {
+					list1.add(gymMember);
+				}
+			}
+			System.out.println(list1);
+			return new ResponseEntity<>(list1, HttpStatus.OK);
+		}
+		
+	
+	    //save or update GymMembers
+		@PostMapping("/gymmembers/save")
+		public ResponseEntity<GymMember> save(@RequestBody GymMember gm){
+			System.out.println("inside gym member");
+		   //System.out.println(gm.toString());
+			int user_id = gm.getUser().getUser_id();
+			User optionalUser = userService.findById(user_id);
+			
+			int membershipPlanId = gm.getMembershipPlan().getMembershipPlanId();
+			MembershipPlan optionalMemberShipPlan = membershipPlanService.findById(membershipPlanId);
+			
+			int activity_id = gm.getActivity().getActivity_id();
+			Activity optionalActivity = activityService.findById(activity_id);
+			
+			gm.setUser(optionalUser);
+			gm.setMembershipPlan(optionalMemberShipPlan);
+			gm.setActivity(optionalActivity);
+			gm.setPayment_status(false);
+			
+			GymMember member = gymMemberService.save(gm);
+			return ResponseEntity.ok(member);
+		}
+		
+	 	//update GymMembers
+		@PutMapping("/gymmembers/update/{memberId}")
+		public ResponseEntity<GymMember> update(@PathVariable("memberId") int id,@RequestBody GymMember gm){
+		   gm.setMemberId(id);
+		   GymMember newUser = gymMemberService.update(gm);
+		   return ResponseEntity.ok(newUser);
+	   }
+		  
+		//delete GymMembers
+		   @DeleteMapping("/gymmembers/delete/{memberId}")
+			public void delete(@PathVariable("memberId") int id){
+			   gymMemberService.deleteById(id);
+		   }
+		   
+
+		   @PostMapping("/gymmembers/assignDietPlan")
+		   public ResponseEntity<GymMember> assignDietPlan (@RequestBody GymMember member){
+			   System.out.println(member);
+			   int dietplanId = member.getDietPlan().getplanId();
+			   System.out.println(dietplanId);
+			   DietPlan optionalDietplan = dietPlanService.findById(dietplanId);
+			  System.out.println(optionalDietplan);
+			   GymMember gm = gymMemberService.findById(member.getMemberId());
+			   System.out.println(gm);
+			   gm.setDietPlan(optionalDietplan);
+			   GymMember gm1 = gymMemberService.save(gm);
+			   System.out.println(gm1);
+			   return ResponseEntity.ok(gm1);
+			   
+		   }
+		   
+		   @PostMapping("/gymmembers/assignWorkoutPlan")
+		   public ResponseEntity<GymMember> assignWorkoutPlan (@RequestBody GymMember member){
+			   int workoutid = member.getWorkoutPlan().getWorkoutid();
+			   WorkoutPlan optionalWorkoutPlan = workoutPlanService.findById(workoutid);
+			   GymMember member1 = gymMemberService.findById(member.getMemberId());
+			   member1.setWorkoutPlan(optionalWorkoutPlan);
+			   GymMember gm = gymMemberService.save(member1);
+			   return ResponseEntity.ok(gm);
+			   
+		   }
+}

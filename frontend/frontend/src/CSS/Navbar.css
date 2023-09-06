@@ -1,0 +1,59 @@
+/* Styling for the navigation bar */
+nav {
+    background-color: #1D3F6E ; 
+    height: 100px;
+  }
+  
+  /* Styling for the unordered list inside the navigation bar */
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    
+  }
+  
+  /* Styling for navigation list items */
+  nav li {
+    margin-right: 18px;
+  }
+  
+  /* Styling for navigation links */
+  nav a {
+    color: rgb(250, 250, 247);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Styling for navigation link hover */
+  nav a:hover {
+    background-color: rgb(253, 249, 249);
+    color: rgb(61, 29, 190);
+    border-radius: 2rem;
+  }
+  
+  /* Styling for the last navigation item (used for spacing) */
+  nav li:last-child {
+    margin-right: 0;
+  }
+  
+  /* Styling for logo images */
+  img {
+    width: 4rem;
+    height: 3rem;
+  }
+  
+  /* Responsive styles */
+  
+    @media screen and (max-width: 768px){
+        
+    }
+  
+   
