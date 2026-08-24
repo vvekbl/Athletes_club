@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+/tools
+/.m2
+
+/jdk17.zip
+/server.log
+
+/server-error.log
